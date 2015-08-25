@@ -1,15 +1,20 @@
-var widget, widgetsToRemove = ["HEADER_REPOSITORY" ,"HEADER_MY_FILES","HEADER_ADMIN_CONSOLE"], idx, max;
+var widget, widgetsToRemove = ["HEADER_REPOSITORY" ,"HEADER_MY_FILES","HEADER_ADMIN_CONSOLE","HEADER_SHARED_FILES"], idx, max;
  
 if (user.isAdmin)
 {
   widgetUtils.deleteObjectFromArray(model.jsonModel, "id", "HEADER_MY_FILES");
   
 }
-
+if (user.isAdmin)
+{
+  widgetUtils.deleteObjectFromArray(model.jsonModel, "id", "HEADER_SHARED_FILES");
+  
+}
 if (user.isAdmin)
 {
   widgetUtils.deleteObjectFromArray(model.jsonModel, "id","HEADER_REPOSITORY");
 }
+
 
 
 
