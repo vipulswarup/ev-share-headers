@@ -15,7 +15,18 @@ if (user.isAdmin)
   widgetUtils.deleteObjectFromArray(model.jsonModel, "id","HEADER_REPOSITORY");
 }
 
-
+var menuBar = 
+ widgetUtils.findObject(model.jsonModel, "id", "HEADER_APP_MENU_BAR");
+if (menuBar != null)
+{
+  menuBar.config.widgets.push({
+    name: "alfresco/menus/AlfMenuBarItem",
+    config: {
+      label: "Trashcan",
+      targetUrl: "user/" + encodeURIComponent(user.name) + "/user-trashcan"
+    }
+  });
+}
 
 
 
