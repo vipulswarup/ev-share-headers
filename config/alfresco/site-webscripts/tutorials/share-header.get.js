@@ -22,7 +22,7 @@ if (menuBar != null)
   menuBar.config.widgets.push({
     name: "alfresco/menus/AlfMenuBarItem",
     config: {
-      label: "Trashcan",
+      label: "header.menu.trashcan.label",
       targetUrl: "user/" + encodeURIComponent(user.name) + "/user-trashcan"
     }
   });
